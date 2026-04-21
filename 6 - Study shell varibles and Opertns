@@ -1,0 +1,157 @@
+Scrpit1.sh 
+
+#! bin/sh 
+ls -l 
+pwd
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Scrpit2.sh 
+
+#!/bin/sh 
+#This is my second script file 
+echo "Waht is your name" 
+read studentname 
+echo "Godd Morning, $studentname" 
+Name="Anmol Agnihotri" 
+echo "My self, $Name" 
+#readonly Name 
+Name="Naman Desai" 
+unset Name 
+echo $0  
+echo $$  
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#!/bin/sh 
+echo "file name of current script is: $0" 
+echo "first parameter is: $1" 
+echo "second parameter is: $2" 
+echo "Quoted values are: $@" 
+echo "Quoted values are: $*" 
+echo "Total number of parameters are: $#" 
+for value in $*  
+do  
+echo $value 
+done 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Script4.sh 
+#!bin/sh 
+#Aratmatic Operator 
+read -p 'Enter Value of A:' a 
+read -p 'Enter Value of B:' b 
+echo $a  
+echo $b 
+add=$((a+b)) 
+echo "Addition of A and B is: $add" 
+sub=$((a-b)) 
+echo "Subraction of A and B is: $sub" 
+mul=$((a*b)) 
+echo "Multiplication of A and B is: $mul" 
+div=$((a/b)) 
+echo "Division of A and B is: $div" 
+mod=$((a%b)) 
+echo "Modulus of A and B is: $mod" 
+inc=$((++a)) 
+echo "increment of A and B is: $inc" 
+dec=$((--b)) 
+echo "decrement of A and B is: $dec"
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Script5.sh 
+
+#!bin/sh 
+#Relational Operator 
+read -p 'Enter Value of A:' a 
+read -p 'Enter Value of B:' b 
+echo $a  
+echo $b 
+if(($a==$b)) 
+then  
+echo "A is Euqal to B" 
+else 
+echo "A is not equal to B" 
+fi 
+if(($a!=$b)) 
+then  
+echo "A is not Euqal to B" 
+else 
+echo "A is  equal to B" 
+fi 
+if(($a<b)) 
+then  
+echo "A is less than  to B" 
+else 
+echo "A is not less than B" 
+fi 
+if(($a<=b)) 
+then  
+echo "A is less than or equal to B" 
+else 
+echo "A is not less than B" 
+fi 
+if(($a>b)) 
+then  
+echo "A is greater than  B" 
+else 
+echo "A is not greater than B" 
+fi 
+if(($a>=b)) 
+then  
+echo "A is greater equal than  B" 
+else 
+echo "A is not greater than B" 
+fi 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Script6.sh 
+#!bin/sh 
+#Logical Operator 
+read -p 'Enter Value of A:' a 
+read -p 'Enter Value of B:' b 
+echo $a  
+echo $b 
+if(($a=="true" && $b=="true")) 
+then  
+echo "Both the values are true" 
+else 
+echo "both are not true" 
+fi 
+if(($a=="true" || $b=="true")) 
+then  
+echo "Atlest one of them is true" 
+else 
+echo "none of them is true" 
+fi 
+if((!$a=="true")) 
+then  
+echo "A is False" 
+else 
+echo "A is true" 
+fi 
+if((!$b=="true")) 
+then  
+echo "B is False" 
+else 
+echo "B is true" 
+fi 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Script7.sh 
+#!bin/sh 
+#Bitwise Operator 
+read -p 'Enter Value of A:' a 
+read -p 'Enter Value of B:' b 
+echo $a  
+echo $b 
+bitwiseand=$((a&b)) 
+echo "Bitwise and of A and B is: $bitwiseand" 
+#Bitwiseor is |  
+bitwiseor=$((a|b)) 
+echo "Bitwise OR of A and B is: $bitwiseor" 
+#Bitwisexor is ^ 
+bitwisexor=$((a^b)) 
+echo "Bitwise  X OR of A and B is: $bitwisexor" 
+#Bitwisecomplement is ~  
+bitwisecomplement=$((~a)) 
+echo "Bitwise  Complement of A is: $bitwisecomplement" 
+#bitwiseleftshift is << 
+bitwiseleftshift=$((a<<1)) 
+echo "Bitwise  Left Shift of A  is: $bitwiseleftshift" 
+#Bitwiserightshift is >> 
+bitwiserightshift=$((a>>1)) 
+echo "Bitwise  Right Shift of A is: $bitwiserightshift"
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
