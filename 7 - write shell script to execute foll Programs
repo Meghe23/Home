@@ -1,0 +1,102 @@
+Program -1: 
+
+#!/bin/sh 
+#Arithmatic operator. 
+read -p 'Enter value of a:' a 
+read -p 'Enter value of b:' b  
+echo $a 
+echo $b add=$((a+b)) 
+echo "The addition of a and b is, $add" sub=$((a-b)) 
+echo "The subtraction of a and b is, $sub" mul=$((a*b)) 
+echo "The multiplication of a and b is, $mul" div=$((a/b)) 
+echo "The division of a and b is, $div" mod=$((a%b)) 
+echo "The modulus of a and b is, $mod" inc=$((++a)) 
+echo "The increment of is, $inc" dec=$((--a)) 
+dec=$((--a)) 
+echo "The decrement is, $dec"
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+• Program -2: 
+#!/bin/sh 
+echo " Enter the principle value: " 
+read p 
+echo " Enter the rate of interest:" 
+read r 
+echo " Enter the time period:" 
+read t 
+s=`expr $p \* $t \* $r / 100` 
+echo " The simple interest is " 
+echo $s 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+• Program -3: 
+#!/bin/sh 
+read -p "Enter your first integer number: " a  
+read -p "Enter your second integer number: " b  
+read -p "Enter your third integer number: " c 
+if [ $a -gt $b ] && [ $a -gt $c ]  
+then 
+echo $a "is greater" 
+elif [ $b -gt $a ] && [ $b -gt $c ]  
+then 
+echo $b "is greater"  
+else 
+echo $c "is greater"  
+fi 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+• Program -4: 
+#!/bin/sh 
+read -p "Enter year: " y  
+if [ $(( y % 400)) -eq 0 ]  
+then 
+echo $y "is a leap year"  
+elif [ $(( y % 100)) -eq 0 ]  
+then 
+echo $y "is not a leap year"  
+elif [ $(( y % 4)) -eq 0 ]  
+then 
+echo $y "is a leap year"  
+else 
+echo $y "is not a leap year"  
+fi 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+• Program 5  
+#!/bin/sh 
+read -p "Enter Number: " n 
+read -p "Enter range: " r 
+i=0 
+while [ $i -le $r ]  
+do 
+echo "$n x $i = `expr $n \* $i`"  
+i=`expr $i + 1 ` 
+done 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+• Program 6 
+#Write a shell script to search whether element is present is in the 
+list or not. 
+
+#!/bin/sh 
+echo "Shell Script to search whether element is present is in the list 
+or not." 
+a[0]=1 
+a[2]=2 
+a[3]=3 
+a[4]=4 
+a[5]=5 
+#Print the value 
+echo "Display the element of Array using *: ${a[*]}" 
+echo "Display the element of Array using @: ${a[@]}" 
+#access element of array 
+echo "Accessing the element of and Array at a particular index" 
+echo " Value present at index 3 :${a[3]}" 
+#array initialization 
+b=(6 7 7 9 10) 
+echo "Element in array B: ${b[*]}" 
+read -p "Enter number to be search: " n 
+echo $n 
+for x in "${b[@]}" 
+do 
+if [ $x -eq $n ] 
+then 
+echo "Number is found" 
+break 
+fi 
+done 
