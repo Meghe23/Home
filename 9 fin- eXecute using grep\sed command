@@ -1,0 +1,46 @@
+Write a script using grep command to find the number of words character, words and lines 
+in a file.  
+
+#!/bin/sh 
+#Write a script using grep command to find the number of words 
+character, words and lines in a file 
+echo -e "\n Global Regular Expression pattern search" 
+grep -c lab ggwp.txt 
+echo -e "\n Searching for pattern and display in highlited 
+color" 
+grep --color -n "lab" ggwp.txt 
+grep -w lab ggwp.txt 
+echo -e "\n Display insesnsitve output" 
+grep -w -i Lab ggwp.txt 
+echo -e "\n Display count in output" 
+grep --count lab ggwp.txt 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Write ascriptusing egrep command to display list of specific type of files in the directory 
+
+#ls | egrep -n "*.sh" 
+ls | egrep -n -i "*.Sh" 
+find . -name "*.sh" | egrep -i exp 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Write a script using sed command to replace all occurrences of particular word in given a 
+file. 
+
+#!/bin/sh 
+#Write a script using sed command to replace all occurrences of 
+particular word in given a file. 
+cat sample.txt 
+echo -e "\n \t Applying sed command for finding lab and 
+replacing it with LAB: \n \t" 
+sed -i 's/LAB/laboratory/g' ggwp.txt 
+echo -e "\n \t After replacement new file is:" 
+cat ggwp.txt 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Write a script using sed command to print duplicated lines in input 
+
+cat ggwp.txt 
+echo -e "\n Delete the Pattern mathing line" 
+sed -i '/SE/d' ggwp.txt  
+echo -e "\n Delete the Pattern mathing line" 
+sed -i 's/LAB/laboratory/g' ggwp.txt 
+echo -e "\n \t Duplicate Match TEXT:" 
+cat ggwp.txt
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
