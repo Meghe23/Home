@@ -1,0 +1,121 @@
+Program -1: 
+
+#!/bin/sh 
+#Script to compare two strings 
+read -p "Enter String 1" a 
+read -p "Enter String 2" b 
+echo a 
+echo b 
+if [ $a == $b ] 
+then 
+echo "Strings are equal" 
+else 
+fi 
+echo "String not equal" 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+• Program -2: 
+#!/bin/sh 
+#Check if directory file exist, if not creat it 
+read -p "Enter file name: " f 
+read -p "Enter Directory name: " d 
+echo $f 
+echo $d 
+if [ -f "$f" ] 
+then 
+else  
+fi 
+echo "Enterd file  exist" 
+echo "Enterd file dose not exist" 
+touch "$f" 
+echo "New file created" 
+if [ -d "$d" ] 
+then 
+else  
+fi 
+echo "Enterd directory  exist" 
+echo "Enterd directory dose not exist" 
+mkdir "$d" 
+echo "New directory created" 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+• Program 3: 
+# !/bin/bash 
+# Take user Input 
+echo "Enter Two numbers : " 
+read a 
+read b 
+# Input type of operation 
+echo "Enter Choice :" 
+echo "1. Addition" 
+echo "2. Subtraction" 
+echo "3. Multiplication" 
+echo "4. Division" 
+read ch 
+# Switch Case to perform 
+# calulator operations 
+case $ch in 
+1)res=`echo $a + $b | bc` 
+;; 
+2)res=`echo $a - $b | bc` 
+;; 
+3)res=`echo $a \* $b | bc` 
+;; 
+4)res=`echo "scale=2; $a / $b" | bc` 
+;; 
+esac 
+echo "Result : $res" 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+• Program 4 
+#!/bin/sh 
+#Print following pattern 
+#* 
+#* * 
+#* * * 
+#* * * * 
+r=4 
+for((i=1; i<=r; i++)) 
+do 
+for((j=1; j<=i; j++)) 
+do 
+echo -n "* " 
+done 
+echo 
+done 
+echo "\t Horizontal tab" 
+echo -e "This \t is \t unix \t lab \n\n" 
+echo "\n new line" 
+echo -e "This \n is \n unix \n lab \n\n" 
+echo "\v Vertical tab" 
+echo -e "This \v is \v unix \v lab \n\n" 
+echo "\r  carriage return" 
+echo -e "This \r is \r unix \r lab \n\n" 
+echo "\a Alert" 
+echo -e "This  is \a unix lab \n\n" 
+echo "\t backspace" 
+echo -e "This \b is \b unix \b lab \n\n" 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+• Program 5 
+a=0 
+while a==0 
+do 
+echo "Enter your choice" 
+echo "1 - Display name of the current directory" 
+echo "2 - Display list of directory contents" 
+echo "3 - Create another directory" 
+echo "4 - Write contents on that and copy it to a suitable 
+location in your home directory" 
+echo "5 - Exit" 
+read -p "Choice : " ch 
+case $ch in  
+1) pwd;; 
+2) ls;; 
+3) read -p "Enter name of your directory :  " n 
+mkdir $n;; 
+4) read -p "Enter your source file :  " s 
+read -p "Enter your destination file :  " d 
+gedit $s 
+cp $s $d ;; 
+5) a=1 
+break;; 
+*)echo "Wrong choice entered ";; 
+esac 
+done 
